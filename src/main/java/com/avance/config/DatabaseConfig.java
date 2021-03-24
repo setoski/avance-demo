@@ -3,6 +3,7 @@ package com.avance.config;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.hibernate.cfg.AvailableSettings;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
@@ -15,11 +16,8 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 public class DatabaseConfig {
+    @Autowired
     private PropertyConfig propsConfig;
-
-    public DatabaseConfig(PropertyConfig propsConfig) {
-        this.propsConfig = propsConfig;
-    }
 
     @Bean(name = "sessionFactory")
     public LocalSessionFactoryBean sessionFactory() {
@@ -41,10 +39,10 @@ public class DatabaseConfig {
     public HikariDataSource dataSource() {
         HikariConfig config = new HikariConfig();
         config.setDataSourceProperties(hibernateProperties());
-        config.setJdbcUrl("jdbc:mysql://localhost:3306/avance");
-        config.setUsername("root");
-        config.setPassword("olumide22");
-        config.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        config.setJdbcUrl(propsConfig.getJdbcUrl());
+        config.setUsername(propsConfig.getDbUsername());
+        config.setPassword(propsConfig.getDbPassword());
+        config.setDriverClassName(propsConfig.getDriverClassName());
         config.setMinimumIdle(Runtime.getRuntime().availableProcessors());
         return new HikariDataSource(config);
     }
