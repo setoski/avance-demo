@@ -19,6 +19,7 @@ public class PropertyConfig {
     @Value("spring.datasource.hikari.minimum-idle")
     private String minimumIdle;
 
+    
     public String getJdbcUrl() {
         return jdbcUrl;
     }
