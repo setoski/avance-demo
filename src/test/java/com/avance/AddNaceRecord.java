@@ -27,7 +27,7 @@ public class AddNaceRecord {
         this.url = "http://localhost:8084/add-nace";
     }
 
-    @When("^I set request headers$")
+    @When("^I set post request headers$")
     public void setAddNaceRequestBody() {
         this.headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
