@@ -20,11 +20,10 @@ import java.util.Map;
 public class NaceCtrl {
     private final Logger logger = LoggerFactory.getLogger(NaceCtrl.class);
     private final NaceSvc nacesvc;
-    private final Utility utility;
+
 
     public NaceCtrl(NaceSvc naceSvc, Utility utility) {
         this.nacesvc = naceSvc;
-        this.utility = utility;
     }
 
     @Async
