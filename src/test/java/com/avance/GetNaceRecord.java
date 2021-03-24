@@ -25,7 +25,7 @@ public class GetNaceRecord {
 
     @Given("^Retrieve a Nace recorde with correct OrderId$")
     public void setAddNaceEndpoint() {
-        this.url = "http://localhost:8084/add-nace";
+        this.url = "http://localhost:8084/api/add-nace";
     }
 
     @When("^I set get request headers$")

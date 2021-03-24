@@ -24,7 +24,7 @@ public class AddNaceRecord {
 
     @Given("^I set POST nace for 'addNace' endpoint$")
     public void setAddNaceEndpoint() {
-        this.url = "http://localhost:8084/add-nace";
+        this.url = "http://localhost:8084/api/add-nace";
     }
 
     @When("^I set post request headers$")
