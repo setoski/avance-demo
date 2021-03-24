@@ -1,0 +1,18 @@
+server:
+  port: 8084
+
+spring:
+  jpa:
+    show-sql: true
+    format_sql: true
+  datasource:
+    hikari:
+      jdbc-url: jdbc:mysql://localhost:3306/avance
+      username: root
+      password: olumide22
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      minimum-idle: 2
+springdoc:
+  swagger-ui:
+    path: /swagger-ui-custom.html
+    operations-sorter: method
