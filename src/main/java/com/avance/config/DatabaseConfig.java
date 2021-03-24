@@ -38,7 +38,6 @@ public class DatabaseConfig {
 
     @Bean
     public HikariDataSource dataSource() {
-        System.out.println("SHOW PROPERTY: "+ propsConfig.getDriverClassName());
         HikariConfig config = new HikariConfig();
         config.setDataSourceProperties(hibernateProperties());
         config.setJdbcUrl(propsConfig.getJdbcUrl());
