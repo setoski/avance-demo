@@ -7,6 +7,7 @@ import com.avance.error.SVCException;
 import com.avance.model.Nace;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -15,12 +16,10 @@ import java.util.Map;
 @Service
 public class NaceSvcImpl implements NaceSvc {
     private final Logger logger = LoggerFactory.getLogger(NaceSvcImpl.class);
-    private final NaceDao nacedao;
-    private Utility utility;
 
-    public NaceSvcImpl(NaceDao naceDao, Utility utility) {
-        this.nacedao = naceDao;
-    }
+    @Autowired
+    private  NaceDao nacedao;
+
 
     @Override
     public Map<String, Object> addNace(AddNaceDto naceDto) {

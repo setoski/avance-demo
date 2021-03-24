@@ -15,14 +15,10 @@ import javax.persistence.TypedQuery;
 @Repository
 public class NaceDaoImpl implements NaceDao {
     private final Logger logger = LoggerFactory.getLogger(NaceDaoImpl.class);
+
     @Autowired
     SessionFactory sessionFactory;
 
-    private final Utility utility;
-
-    public NaceDaoImpl(Utility utility) {
-        this.utility = utility;
-    }
 
     @Override
     public String addNace(Nace nace) throws DAOException {

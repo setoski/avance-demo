@@ -16,6 +16,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 public class DatabaseConfig {
+
     @Autowired
     private PropertyConfig propsConfig;
 
@@ -37,6 +38,7 @@ public class DatabaseConfig {
 
     @Bean
     public HikariDataSource dataSource() {
+        System.out.println("SHOW PROPERTY: "+ propsConfig.getDriverClassName());
         HikariConfig config = new HikariConfig();
         config.setDataSourceProperties(hibernateProperties());
         config.setJdbcUrl(propsConfig.getJdbcUrl());

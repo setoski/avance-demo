@@ -8,15 +8,15 @@ import org.springframework.stereotype.Component;
 @PropertySource("classpath:/application.yml")
 public class PropertyConfig {
 
-    @Value("spring.datasource.hikari.jdbc-url")
+    @Value("${spring.datasource.hikari.jdbc-url}")
     private String jdbcUrl;
-    @Value("spring.datasource.hikari.username")
+    @Value("${spring.datasource.hikari.username}")
     private String dbUsername;
-    @Value("spring.datasource.hikari.password")
+    @Value("${spring.datasource.hikari.password}")
     private String dbPassword;
-    @Value("spring.datasource.hikari.driver-class-name")
+    @Value("${spring.datasource.hikari.driver-class-name}")
     private String driverClassName;
-    @Value("spring.datasource.hikari.minimum-idle")
+    @Value("${spring.datasource.hikari.minimum-idle}")
     private String minimumIdle;
 
 
